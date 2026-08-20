@@ -29,5 +29,12 @@ namespace pryMenuTorresED
             this.Close();
 
         }
+
+        private void pilaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPila frmPila = new frmPila();
+            frmPila.ShowDialog();
+            this.Close();
+        }
     }
 }

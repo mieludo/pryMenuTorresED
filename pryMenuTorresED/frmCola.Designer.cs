@@ -29,23 +29,29 @@
         private void InitializeComponent()
         {
             this.gbNuevoElemento = new System.Windows.Forms.GroupBox();
-            this.gbEliminar = new System.Windows.Forms.GroupBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblTramite = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtTramite = new System.Windows.Forms.TextBox();
-            this.lblCodigoDos = new System.Windows.Forms.Label();
-            this.lblNombreDos = new System.Windows.Forms.Label();
-            this.lblTramiteDos = new System.Windows.Forms.Label();
-            this.lblCodigoEliminar = new System.Windows.Forms.Label();
-            this.lblNombreEliminar = new System.Windows.Forms.Label();
-            this.lblTramiteEliminar = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtTramite = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.lblTramite = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.gbEliminar = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.lblTramiteEliminar = new System.Windows.Forms.Label();
+            this.lblNombreEliminar = new System.Windows.Forms.Label();
+            this.lblCodigoEliminar = new System.Windows.Forms.Label();
+            this.lblTramiteDos = new System.Windows.Forms.Label();
+            this.lblNombreDos = new System.Windows.Forms.Label();
+            this.lblCodigoDos = new System.Windows.Forms.Label();
+            this.lbLista = new System.Windows.Forms.ListBox();
+            this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbNuevoElemento.SuspendLayout();
             this.gbEliminar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
             // gbNuevoElemento
@@ -64,6 +70,67 @@
             this.gbNuevoElemento.TabStop = false;
             this.gbNuevoElemento.Text = "Nuevo Elemento";
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(99, 167);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(125, 23);
+            this.btnAgregar.TabIndex = 6;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // txtTramite
+            // 
+            this.txtTramite.Location = new System.Drawing.Point(60, 130);
+            this.txtTramite.Name = "txtTramite";
+            this.txtTramite.Size = new System.Drawing.Size(164, 20);
+            this.txtTramite.TabIndex = 5;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(60, 71);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(164, 20);
+            this.txtNombre.TabIndex = 4;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(60, 19);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(164, 20);
+            this.txtCodigo.TabIndex = 3;
+            // 
+            // lblTramite
+            // 
+            this.lblTramite.AutoSize = true;
+            this.lblTramite.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTramite.Location = new System.Drawing.Point(6, 137);
+            this.lblTramite.Name = "lblTramite";
+            this.lblTramite.Size = new System.Drawing.Size(48, 13);
+            this.lblTramite.TabIndex = 2;
+            this.lblTramite.Text = "Trámite:";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(7, 78);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(53, 13);
+            this.lblNombre.TabIndex = 1;
+            this.lblNombre.Text = "Nombre:";
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(6, 26);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(48, 13);
+            this.lblCodigo.TabIndex = 0;
+            this.lblCodigo.Text = "Código:";
+            // 
             // gbEliminar
             // 
             this.gbEliminar.Controls.Add(this.btnEliminar);
@@ -80,76 +147,38 @@
             this.gbEliminar.TabStop = false;
             this.gbEliminar.Text = "Elemento a eliminar";
             // 
-            // lblCodigo
+            // btnEliminar
             // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(6, 26);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(48, 13);
-            this.lblCodigo.TabIndex = 0;
-            this.lblCodigo.Text = "Código:";
+            this.btnEliminar.Location = new System.Drawing.Point(102, 168);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(125, 23);
+            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // lblNombre
+            // lblTramiteEliminar
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(7, 78);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(53, 13);
-            this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "Nombre:";
+            this.lblTramiteEliminar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTramiteEliminar.Location = new System.Drawing.Point(60, 131);
+            this.lblTramiteEliminar.Name = "lblTramiteEliminar";
+            this.lblTramiteEliminar.Size = new System.Drawing.Size(167, 30);
+            this.lblTramiteEliminar.TabIndex = 6;
             // 
-            // lblTramite
+            // lblNombreEliminar
             // 
-            this.lblTramite.AutoSize = true;
-            this.lblTramite.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTramite.Location = new System.Drawing.Point(6, 137);
-            this.lblTramite.Name = "lblTramite";
-            this.lblTramite.Size = new System.Drawing.Size(48, 13);
-            this.lblTramite.TabIndex = 2;
-            this.lblTramite.Text = "Trámite:";
+            this.lblNombreEliminar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblNombreEliminar.Location = new System.Drawing.Point(60, 72);
+            this.lblNombreEliminar.Name = "lblNombreEliminar";
+            this.lblNombreEliminar.Size = new System.Drawing.Size(167, 29);
+            this.lblNombreEliminar.TabIndex = 5;
             // 
-            // txtCodigo
+            // lblCodigoEliminar
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(60, 19);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(164, 20);
-            this.txtCodigo.TabIndex = 3;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(60, 71);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(164, 20);
-            this.txtNombre.TabIndex = 4;
-            // 
-            // txtTramite
-            // 
-            this.txtTramite.Location = new System.Drawing.Point(60, 130);
-            this.txtTramite.Name = "txtTramite";
-            this.txtTramite.Size = new System.Drawing.Size(164, 20);
-            this.txtTramite.TabIndex = 5;
-            // 
-            // lblCodigoDos
-            // 
-            this.lblCodigoDos.AutoSize = true;
-            this.lblCodigoDos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoDos.Location = new System.Drawing.Point(6, 27);
-            this.lblCodigoDos.Name = "lblCodigoDos";
-            this.lblCodigoDos.Size = new System.Drawing.Size(48, 13);
-            this.lblCodigoDos.TabIndex = 1;
-            this.lblCodigoDos.Text = "Código:";
-            // 
-            // lblNombreDos
-            // 
-            this.lblNombreDos.AutoSize = true;
-            this.lblNombreDos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreDos.Location = new System.Drawing.Point(6, 79);
-            this.lblNombreDos.Name = "lblNombreDos";
-            this.lblNombreDos.Size = new System.Drawing.Size(53, 13);
-            this.lblNombreDos.TabIndex = 2;
-            this.lblNombreDos.Text = "Nombre:";
+            this.lblCodigoEliminar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblCodigoEliminar.Location = new System.Drawing.Point(60, 20);
+            this.lblCodigoEliminar.Name = "lblCodigoEliminar";
+            this.lblCodigoEliminar.Size = new System.Drawing.Size(167, 27);
+            this.lblCodigoEliminar.TabIndex = 4;
             // 
             // lblTramiteDos
             // 
@@ -161,53 +190,69 @@
             this.lblTramiteDos.TabIndex = 3;
             this.lblTramiteDos.Text = "Trámite:";
             // 
-            // lblCodigoEliminar
+            // lblNombreDos
             // 
-            this.lblCodigoEliminar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCodigoEliminar.Location = new System.Drawing.Point(60, 20);
-            this.lblCodigoEliminar.Name = "lblCodigoEliminar";
-            this.lblCodigoEliminar.Size = new System.Drawing.Size(167, 27);
-            this.lblCodigoEliminar.TabIndex = 4;
+            this.lblNombreDos.AutoSize = true;
+            this.lblNombreDos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreDos.Location = new System.Drawing.Point(6, 79);
+            this.lblNombreDos.Name = "lblNombreDos";
+            this.lblNombreDos.Size = new System.Drawing.Size(53, 13);
+            this.lblNombreDos.TabIndex = 2;
+            this.lblNombreDos.Text = "Nombre:";
             // 
-            // lblNombreEliminar
+            // lblCodigoDos
             // 
-            this.lblNombreEliminar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblNombreEliminar.Location = new System.Drawing.Point(60, 72);
-            this.lblNombreEliminar.Name = "lblNombreEliminar";
-            this.lblNombreEliminar.Size = new System.Drawing.Size(167, 29);
-            this.lblNombreEliminar.TabIndex = 5;
+            this.lblCodigoDos.AutoSize = true;
+            this.lblCodigoDos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoDos.Location = new System.Drawing.Point(6, 27);
+            this.lblCodigoDos.Name = "lblCodigoDos";
+            this.lblCodigoDos.Size = new System.Drawing.Size(48, 13);
+            this.lblCodigoDos.TabIndex = 1;
+            this.lblCodigoDos.Text = "Código:";
             // 
-            // lblTramiteEliminar
+            // lbLista
             // 
-            this.lblTramiteEliminar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTramiteEliminar.Location = new System.Drawing.Point(60, 131);
-            this.lblTramiteEliminar.Name = "lblTramiteEliminar";
-            this.lblTramiteEliminar.Size = new System.Drawing.Size(167, 30);
-            this.lblTramiteEliminar.TabIndex = 6;
+            this.lbLista.FormattingEnabled = true;
+            this.lbLista.Location = new System.Drawing.Point(13, 223);
+            this.lbLista.Name = "lbLista";
+            this.lbLista.Size = new System.Drawing.Size(239, 212);
+            this.lbLista.TabIndex = 2;
             // 
-            // btnAgregar
+            // dgvLista
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(99, 167);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(125, 23);
-            this.btnAgregar.TabIndex = 6;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.dgvLista.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Nombre,
+            this.Tramite});
+            this.dgvLista.Location = new System.Drawing.Point(258, 223);
+            this.dgvLista.Name = "dgvLista";
+            this.dgvLista.Size = new System.Drawing.Size(344, 212);
+            this.dgvLista.TabIndex = 3;
             // 
-            // btnEliminar
+            // Codigo
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(102, 168);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(125, 23);
-            this.btnEliminar.TabIndex = 7;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Tramite
+            // 
+            this.Tramite.HeaderText = "Trámite";
+            this.Tramite.Name = "Tramite";
             // 
             // frmCola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 450);
+            this.ClientSize = new System.Drawing.Size(807, 450);
+            this.Controls.Add(this.dgvLista);
+            this.Controls.Add(this.lbLista);
             this.Controls.Add(this.gbEliminar);
             this.Controls.Add(this.gbNuevoElemento);
             this.Name = "frmCola";
@@ -217,6 +262,7 @@
             this.gbNuevoElemento.PerformLayout();
             this.gbEliminar.ResumeLayout(false);
             this.gbEliminar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -239,5 +285,10 @@
         private System.Windows.Forms.Label lblTramiteDos;
         private System.Windows.Forms.Label lblNombreDos;
         private System.Windows.Forms.Label lblCodigoDos;
+        private System.Windows.Forms.ListBox lbLista;
+        private System.Windows.Forms.DataGridView dgvLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tramite;
     }
 }
