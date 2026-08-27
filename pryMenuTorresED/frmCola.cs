@@ -28,12 +28,18 @@ namespace pryMenuTorresED
 
             Cola.Agregar(objNodo);
             Cola.Recorrer(lbLista);
+            Cola.Recorrer(dgvLista);
 
             txtCodigo.Clear();
             txtNombre.Clear();
             txtTramite.Clear();
 
             txtCodigo.Focus();
+        }
+
+        private void frmCola_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

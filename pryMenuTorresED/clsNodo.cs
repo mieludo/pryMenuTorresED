@@ -13,6 +13,7 @@ namespace pryMenuTorresED
         private string tramite;
 
         public clsNodo siguiente;
+        public clsNodo anterior;
 
         public int Codigo { get => codigo; set => codigo = value; }
         public string Nombre { get => nombre; set => nombre = value; }

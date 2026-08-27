@@ -28,6 +28,19 @@ namespace pryMenuTorresED
             }
         }
 
+        public void Eliminar()
+        {
+            if (primero != null)
+            {
+                primero = primero.siguiente;
+            
+                if (primero == null)
+                {
+                    ultimo = null;
+                }
+            }
+        }
+
         public void Recorrer(ListBox lbLista)
 
         {
@@ -42,6 +55,15 @@ namespace pryMenuTorresED
             }
         }
 
-
+        public void Recorrer(DataGridView dgvLista)
+        {
+            clsNodo aux = primero;
+            dgvLista.Rows.Clear();
+            while (aux != null)
+            {
+                dgvLista.Rows.Add(aux.Codigo, aux.Nombre, aux.Tramite);
+                aux = aux.siguiente;
+            }
+        }
     }
 }

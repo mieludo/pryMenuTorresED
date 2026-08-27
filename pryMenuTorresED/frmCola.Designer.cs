@@ -258,6 +258,7 @@
             this.Name = "frmCola";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cola - Estructura FIFO";
+            this.Load += new System.EventHandler(this.frmCola_Load);
             this.gbNuevoElemento.ResumeLayout(false);
             this.gbNuevoElemento.PerformLayout();
             this.gbEliminar.ResumeLayout(false);
