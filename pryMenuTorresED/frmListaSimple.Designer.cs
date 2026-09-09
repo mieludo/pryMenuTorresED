@@ -34,6 +34,7 @@
             this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstPila = new System.Windows.Forms.ListBox();
             this.gbEliminar = new System.Windows.Forms.GroupBox();
+            this.cbxCodigo = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblCodigoDos = new System.Windows.Forms.Label();
             this.gbElemento = new System.Windows.Forms.GroupBox();
@@ -44,7 +45,6 @@
             this.lblTramite = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.cbxCodigo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.gbEliminar.SuspendLayout();
             this.gbElemento.SuspendLayout();
@@ -99,6 +99,14 @@
             this.gbEliminar.TabStop = false;
             this.gbEliminar.Text = "Eliminar Elemento";
             // 
+            // cbxCodigo
+            // 
+            this.cbxCodigo.FormattingEnabled = true;
+            this.cbxCodigo.Location = new System.Drawing.Point(71, 27);
+            this.cbxCodigo.Name = "cbxCodigo";
+            this.cbxCodigo.Size = new System.Drawing.Size(148, 21);
+            this.cbxCodigo.TabIndex = 5;
+            // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(14, 181);
@@ -107,6 +115,7 @@
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblCodigoDos
             // 
@@ -162,6 +171,7 @@
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblTramite
             // 
@@ -190,14 +200,6 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código";
             // 
-            // cbxCodigo
-            // 
-            this.cbxCodigo.FormattingEnabled = true;
-            this.cbxCodigo.Location = new System.Drawing.Point(71, 27);
-            this.cbxCodigo.Name = "cbxCodigo";
-            this.cbxCodigo.Size = new System.Drawing.Size(148, 21);
-            this.cbxCodigo.TabIndex = 5;
-            // 
             // frmListaSimple
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,6 +212,7 @@
             this.Controls.Add(this.gbElemento);
             this.Name = "frmListaSimple";
             this.Text = "Lista Simple";
+            this.Load += new System.EventHandler(this.frmListaSimple_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.gbEliminar.ResumeLayout(false);
             this.gbEliminar.PerformLayout();
