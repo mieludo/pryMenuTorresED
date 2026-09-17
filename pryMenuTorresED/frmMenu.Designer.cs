@@ -99,6 +99,7 @@
             this.lDEToolStripMenuItem.Name = "lDEToolStripMenuItem";
             this.lDEToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lDEToolStripMenuItem.Text = "L.D.E";
+            this.lDEToolStripMenuItem.Click += new System.EventHandler(this.lDEToolStripMenuItem_Click);
             // 
             // estNoLinealesToolStripMenuItem
             // 
