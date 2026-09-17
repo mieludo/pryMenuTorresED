@@ -47,10 +47,39 @@ namespace pryMenuTorresED
             cbxCodigo.Text = "";
             LosRecorrer();
         }
+        private void LosRecorrer()
+        {
+            ListaSimple.Recorrer(cbxCodigo);
+            ListaSimple.Recorrer(dgvDatos);
+            ListaSimple.Recorrer(lstPila);
+        }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (cbxCodigo.SelectedItem != null)
+            {
+                try
+                {
+                    ListaSimple.Eliminar(
+                        Convert.ToInt32(cbxCodigo.SelectedItem)
+                    );
 
+                    MessageBox.Show("Se eliminó correctamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex);
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                    "No se ha seleccionado ningún valor a eliminar."
+                );
+            }
+
+            limpiarTodo();
         }
     }
 }

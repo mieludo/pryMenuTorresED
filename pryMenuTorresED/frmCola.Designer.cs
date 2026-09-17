@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCola));
             this.gbNuevoElemento = new System.Windows.Forms.GroupBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtTramite = new System.Windows.Forms.TextBox();
@@ -255,6 +256,7 @@
             this.Controls.Add(this.lbLista);
             this.Controls.Add(this.gbEliminar);
             this.Controls.Add(this.gbNuevoElemento);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCola";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cola - Estructura FIFO";

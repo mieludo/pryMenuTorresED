@@ -1,6 +1,6 @@
 ﻿namespace pryMenuTorresED
 {
-    partial class frmListaSimple
+    partial class frmListaDoble
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaSimple));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaDoble));
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lstPila = new System.Windows.Forms.ListBox();
+            this.lstListaDoble = new System.Windows.Forms.ListBox();
             this.gbEliminar = new System.Windows.Forms.GroupBox();
             this.cbxCodigo = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -59,10 +59,10 @@
             this.Codigo,
             this.Nombre,
             this.Tramite});
-            this.dgvDatos.Location = new System.Drawing.Point(334, 268);
+            this.dgvDatos.Location = new System.Drawing.Point(338, 272);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.Size = new System.Drawing.Size(325, 224);
-            this.dgvDatos.TabIndex = 7;
+            this.dgvDatos.TabIndex = 11;
             // 
             // Codigo
             // 
@@ -79,24 +79,24 @@
             this.Tramite.HeaderText = "Trámite";
             this.Tramite.Name = "Tramite";
             // 
-            // lstPila
+            // lstListaDoble
             // 
-            this.lstPila.BackColor = System.Drawing.Color.White;
-            this.lstPila.FormattingEnabled = true;
-            this.lstPila.Location = new System.Drawing.Point(10, 267);
-            this.lstPila.Name = "lstPila";
-            this.lstPila.Size = new System.Drawing.Size(320, 225);
-            this.lstPila.TabIndex = 6;
+            this.lstListaDoble.BackColor = System.Drawing.Color.White;
+            this.lstListaDoble.FormattingEnabled = true;
+            this.lstListaDoble.Location = new System.Drawing.Point(14, 271);
+            this.lstListaDoble.Name = "lstListaDoble";
+            this.lstListaDoble.Size = new System.Drawing.Size(320, 225);
+            this.lstListaDoble.TabIndex = 10;
             // 
             // gbEliminar
             // 
             this.gbEliminar.Controls.Add(this.cbxCodigo);
             this.gbEliminar.Controls.Add(this.btnEliminar);
             this.gbEliminar.Controls.Add(this.lblCodigoDos);
-            this.gbEliminar.Location = new System.Drawing.Point(334, 11);
+            this.gbEliminar.Location = new System.Drawing.Point(338, 15);
             this.gbEliminar.Name = "gbEliminar";
             this.gbEliminar.Size = new System.Drawing.Size(325, 255);
-            this.gbEliminar.TabIndex = 5;
+            this.gbEliminar.TabIndex = 9;
             this.gbEliminar.TabStop = false;
             this.gbEliminar.Text = "Eliminar Elemento";
             // 
@@ -136,10 +136,10 @@
             this.gbElemento.Controls.Add(this.lblTramite);
             this.gbElemento.Controls.Add(this.lblNombre);
             this.gbElemento.Controls.Add(this.lblCodigo);
-            this.gbElemento.Location = new System.Drawing.Point(10, 11);
+            this.gbElemento.Location = new System.Drawing.Point(14, 15);
             this.gbElemento.Name = "gbElemento";
             this.gbElemento.Size = new System.Drawing.Size(320, 255);
-            this.gbElemento.TabIndex = 4;
+            this.gbElemento.TabIndex = 8;
             this.gbElemento.TabStop = false;
             this.gbElemento.Text = "Nuevo Elemento";
             // 
@@ -166,7 +166,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(11, 181);
+            this.btnAgregar.Location = new System.Drawing.Point(14, 181);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(293, 63);
             this.btnAgregar.TabIndex = 3;
@@ -201,20 +201,20 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código";
             // 
-            // frmListaSimple
+            // frmListaDoble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(674, 506);
+            this.BackColor = System.Drawing.Color.PeachPuff;
+            this.ClientSize = new System.Drawing.Size(691, 517);
             this.Controls.Add(this.dgvDatos);
-            this.Controls.Add(this.lstPila);
+            this.Controls.Add(this.lstListaDoble);
             this.Controls.Add(this.gbEliminar);
             this.Controls.Add(this.gbElemento);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmListaSimple";
-            this.Text = "Lista Simple";
-            this.Load += new System.EventHandler(this.frmListaSimple_Load);
+            this.Name = "frmListaDoble";
+            this.Text = "Lista Doblemente Enlazada";
+            this.Load += new System.EventHandler(this.frmListaDoble_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.gbEliminar.ResumeLayout(false);
             this.gbEliminar.PerformLayout();
@@ -230,8 +230,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tramite;
-        private System.Windows.Forms.ListBox lstPila;
+        private System.Windows.Forms.ListBox lstListaDoble;
         private System.Windows.Forms.GroupBox gbEliminar;
+        private System.Windows.Forms.ComboBox cbxCodigo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblCodigoDos;
         private System.Windows.Forms.GroupBox gbElemento;
@@ -242,6 +243,5 @@
         private System.Windows.Forms.Label lblTramite;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.ComboBox cbxCodigo;
     }
 }

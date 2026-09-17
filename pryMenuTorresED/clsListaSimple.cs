@@ -21,18 +21,29 @@ namespace pryMenuTorresED
             }
             else
             {
+                if (Nuevo.Codigo <= Primero.Codigo)
+                {
+                    Nuevo.siguiente = Primero;
+                    Primero = Nuevo;
+                }
+                else
+                {
+                    clsNodo aux = Primero;
+                    clsNodo ant = Primero;
 
-            }
-            clsNodo aux = Primero;
-            clsNodo ant = Primero;
-            while (aux != null && Nuevo.Codigo > aux.Codigo)
-            {
-                ant = aux;
-                ant = aux.siguiente;
+                    while (aux != null && Nuevo.Codigo > aux.Codigo)
+                    {
+                        ant = aux;
+                        aux = aux.siguiente;
+                    }
+
+                    ant.siguiente = Nuevo;
+                    Nuevo.siguiente = aux;
+                }
             }
         }
-    
-             public void Eliminar(Int32 codigo)
+
+        public void Eliminar(Int32 codigo)
         {
             if (Primero.Codigo == codigo)
             {

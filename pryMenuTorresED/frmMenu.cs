@@ -36,5 +36,12 @@ namespace pryMenuTorresED
             frmPila.ShowDialog();
             this.Close();
         }
+
+        private void lSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListaSimple frmListaSimple = new frmListaSimple();
+            frmListaSimple.ShowDialog();
+            this.Close();
+        }
     }
 }

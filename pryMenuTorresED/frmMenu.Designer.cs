@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estructurasLinealesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,7 @@
             this.bDToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(628, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(377, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,6 +92,7 @@
             this.lSToolStripMenuItem.Name = "lSToolStripMenuItem";
             this.lSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lSToolStripMenuItem.Text = "L.S";
+            this.lSToolStripMenuItem.Click += new System.EventHandler(this.lSToolStripMenuItem_Click);
             // 
             // lDEToolStripMenuItem
             // 
@@ -110,13 +112,13 @@
             // arbolesToolStripMenuItem
             // 
             this.arbolesToolStripMenuItem.Name = "arbolesToolStripMenuItem";
-            this.arbolesToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.arbolesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.arbolesToolStripMenuItem.Text = "Arboles";
             // 
             // grafosToolStripMenuItem
             // 
             this.grafosToolStripMenuItem.Name = "grafosToolStripMenuItem";
-            this.grafosToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.grafosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.grafosToolStripMenuItem.Text = "Grafos";
             // 
             // bDToolStripMenuItem
@@ -129,8 +131,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(377, 511);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
             this.Text = "Menú";
